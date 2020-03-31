@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "160232953612",
+    "firebase_url": "https://truckie-f73ab.firebaseio.com",
+    "project_id": "truckie-f73ab",
+    "storage_bucket": "truckie-f73ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160232953612:android:9dad5e3c11e8ca88",
+        "android_client_info": {
+          "package_name": "ca.uqac.truckie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160232953612-mmsj3ngkfqrhar97d1gm41427dgslepj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA6hvvGjPX1T5_um-Xhm985b-ECMUVDHM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

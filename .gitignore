@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+.gradle
+build
+app/build
+uqac-8INF865-truckie.iml
+local.properties
