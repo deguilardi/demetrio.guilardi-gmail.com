@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xsmall">4dp</dimen>
+    <dimen name="small">6dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="large">11dp</dimen>
+    <dimen name="xlarge">14dp</dimen>
+    <dimen name="xxlarge">24dp</dimen>
+
+    <dimen name="text_xxxsmall">8sp</dimen>
+    <dimen name="text_xxsmall">10sp</dimen>
+    <dimen name="text_xsmall">13sp</dimen>
+    <dimen name="text_small">15sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xlarge">24sp</dimen>
+    <dimen name="text_xxlarge">36sp</dimen>
+    <dimen name="text_xxxlarge">48sp</dimen>
+
+</resources>

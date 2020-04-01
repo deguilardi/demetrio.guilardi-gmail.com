@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- TRANSITIONS -->
+    <string name="transition_1">transition_1</string>
+    <string name="transition_2">transition_2</string>
+
+    <!-- UI -->
+    <string name="app_name">truckie</string>
+
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="login">login</string>
+    <string name="login_error">Login Error</string>
+    <string name="login_information">Login Info</string>
+    <string name="next">next</string>
+
+    <!-- ERRORS -->
+    <plurals name="err_found_error">
+        <item quantity="one">%1$d error found</item>
+        <item quantity="other">%1$d errors found</item>
+    </plurals>
+    <string name="err_empty_field">can\'t be empty</string>
+    <string name="err_empty_spinner">select</string>
+    <string name="err_passwords_match">passwords don\'t match</string>
+</resources>

@@ -9,4 +9,51 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.Contrast" parent="AppTheme.NoActionBar">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorControlNormal">@color/lightGrey</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/lightGrey</item>
+    </style>
+
+    <!-- elements -->
+
+    <style name="FormTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/xxlarge</item>
+        <item name="android:layout_marginBottom">@dimen/xlarge</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/small</item>
+        <item name="android:layout_marginEnd">@dimen/small</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="EditText.Contrast" parent="EditText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BtnSubmit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/medium</item>
+        <item name="android:layout_marginEnd">@dimen/medium</item>
+        <item name="android:layout_marginTop">@dimen/xxlarge</item>
+        <item name="android:layout_marginBottom">@dimen/xxlarge</item>
+        <item name="android:padding">@dimen/medium</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
 </resources>
