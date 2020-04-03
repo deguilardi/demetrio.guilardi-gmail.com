@@ -66,5 +66,16 @@
             android:text="@string/login"
             android:visibility="invisible" />
 
+        <TextView
+            android:id="@+id/link_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium"
+            android:gravity="center"
+            android:text="@string/signup_link"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@android:color/white"
+            android:visibility="invisible"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

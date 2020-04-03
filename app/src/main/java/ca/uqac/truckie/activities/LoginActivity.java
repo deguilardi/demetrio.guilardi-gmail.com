@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.lyt_password) TextInputLayout mLytPassword;
     @BindView(R.id.txt_password) AppCompatEditText mTxtPassword;
     @BindView(R.id.btn_login) Button mBtnLogin;
+    @BindView(R.id.link_signup) TextView mLinkSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLytEmail.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in));
         mLytPassword.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in));
         mBtnLogin.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in));
+        mLinkSignup.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in));
         mBtnLogin.setOnClickListener(this);
+        mLinkSignup.setOnClickListener(this);
     }
 
     public void actionLogin(View view) {
@@ -97,6 +100,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    public void actionCreateAccount(View view) {
+        FormUtil.hideKeyBoard(this);
+        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            Pair<View, String> pair1 = Pair.create(mTxtEmail, getString(R.string.transition_1));
+            Pair<View, String> pair2 = Pair.create(mTxtPassword, getString(R.string.transition_2));
+            Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pair1, pair2).toBundle();
+            startActivityForResult(intent, REQUEST_SIGNUP, bundle);
+        }
+        else {
+            startActivityForResult(intent, REQUEST_SIGNUP);
+        }
+    }
+
     private void goToMainActivity(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
@@ -104,7 +121,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        actionLogin(view);
-
+        int id = view.getId();
+        switch (id) {
+            case R.id.btn_login:
+                actionLogin(view);
+                break;
+            case R.id.link_signup:
+                actionCreateAccount(view);
+                break;
+        }
     }
 }

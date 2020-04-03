@@ -7,14 +7,30 @@
     <!-- UI -->
     <string name="app_name">truckie</string>
 
+    <string name="placeholder_default">--</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="login">login</string>
     <string name="login_error">Login Error</string>
+    <string name="signup_link">No account yet? Create one</string>
+    <string name="signup">signup</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="name">Name</string>
+    <string name="phone_number_1">Phone 1</string>
+    <string name="phone_number_2">Phone 2</string>
+    <string name="driver_license">Driver License #</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="zip_code">ZIP Code</string>
+    <string name="vehicle_information">Vehicle Info</string>
     <string name="login_information">Login Info</string>
     <string name="next">next</string>
+
+    <string-array name="spinner_default_placeholder_array">
+        <item>@string/placeholder_default</item>
+    </string-array>
 
     <!-- ERRORS -->
     <plurals name="err_found_error">
@@ -24,4 +40,153 @@
     <string name="err_empty_field">can\'t be empty</string>
     <string name="err_empty_spinner">select</string>
     <string name="err_passwords_match">passwords don\'t match</string>
+
+    <!-- LISTS -->
+    <string name="country_default_value">Country</string>
+    <string-array name="countries_array">
+        <item>@string/country_default_value</item>
+        <item>Brazil</item>
+        <item>United States</item>
+    </string-array>
+
+    <string-array name="states_brazil_array" translatable="false">
+        <item>@string/placeholder_default</item>
+        <item>AC</item>
+        <item>AL</item>
+        <item>AM</item>
+        <item>AP</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MG</item>
+        <item>MS</item>
+        <item>MT</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>PR</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>RS</item>
+        <item>SC</item>
+        <item>SE</item>
+        <item>SP</item>
+        <item>TO</item>
+    </string-array>
+
+    <string-array name="states_usa_array" translatable="false">
+        <item>@string/placeholder_default</item>
+        <item>AK</item>
+        <item>AL</item>
+        <item>AR</item>
+        <item>AZ</item>
+        <item>CA</item>
+        <item>CO</item>
+        <item>CT</item>
+        <item>DC</item>
+        <item>DE</item>
+        <item>FL</item>
+        <item>GA</item>
+        <item>HI</item>
+        <item>IA</item>
+        <item>ID</item>
+        <item>IL</item>
+        <item>IN</item>
+        <item>KS</item>
+        <item>KY</item>
+        <item>LA</item>
+        <item>MA</item>
+        <item>MD</item>
+        <item>MI</item>
+        <item>MN</item>
+        <item>MO</item>
+        <item>MS</item>
+        <item>MT</item>
+        <item>NC</item>
+        <item>ND</item>
+        <item>NE</item>
+        <item>NH</item>
+        <item>NJ</item>
+        <item>NM</item>
+        <item>NV</item>
+        <item>NY</item>
+        <item>OH</item>
+        <item>OK</item>
+        <item>OR</item>
+        <item>PA</item>
+        <item>RI</item>
+        <item>SC</item>
+        <item>SD</item>
+        <item>TN</item>
+        <item>TX</item>
+        <item>UT</item>
+        <item>VA</item>
+        <item>VT</item>
+        <item>WA</item>
+        <item>WI</item>
+        <item>WV</item>
+        <item>WY</item>
+    </string-array>
+
+    <string name="vehicle_type_default_value">Vehicle Type</string>
+    <string-array name="vehicle_types">
+        <item>@string/vehicle_type_default_value</item>
+        <item>Light</item>
+        <item>Medium</item>
+        <item>Heavy</item>
+    </string-array>
+
+    <string-array name="light_vehicle_types">
+        <item>@string/vehicle_type_default_value</item>
+        <item>Minivan</item>
+        <item>Sport Utility Van (SUV)</item>
+        <item>Pickup truck</item>
+        <item>Panel truck</item>
+        <item>Tow truck</item>
+    </string-array>
+
+    <string-array name="medium_vehicle_types">
+        <item>@string/vehicle_type_default_value</item>
+        <item>Box truck</item>
+        <item>Van</item>
+        <item>Cutaway Van Chassis</item>
+        <item>Flatbed Truck</item>
+    </string-array>
+
+    <string-array name="heavy_vehicle_types">
+        <item>@string/vehicle_type_default_value</item>
+        <item>Dump Truck</item>
+        <item>Log Carrier</item>
+        <item>Refrigerator Truck</item>
+        <item>Tractor Truck</item>
+    </string-array>
+
+    <string name="vehicle_size_default_value">Size</string>
+    <string-array name="vehicle_sizes">
+        <item>@string/vehicle_size_default_value</item>
+        <item>up to 10ft</item>
+        <item>11 to 14ft</item>
+        <item>15 to 17ft</item>
+        <item>18 to 20ft</item>
+        <item>21 to 26ft</item>
+        <item>more than 27ft</item>
+    </string-array>
+
+    <string name="vehicle_capacity_default_value">Max load</string>
+    <string-array name="vehicle_capacities">
+        <item>@string/vehicle_capacity_default_value</item>
+        <item>Up to 2.000 pounds</item>
+        <item>2.001 to 5.000 pounds</item>
+        <item>5.001 to 8.000 pounds</item>
+        <item>8.001 to 11.000 pounds</item>
+        <item>11.001 to 15.000 pounds</item>
+        <item>more than 15.001 pounds</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/FormTitle"
+        android:text="@string/personal_info"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
+        app:errorEnabled="true" >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/EditText"
+            android:id="@+id/txt_name"
+            android:hint="@string/name"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            app:errorEnabled="true"
+            android:layout_weight="1" >
+
+            <androidx.appcompat.widget.AppCompatEditText
+                style="@style/EditText"
+                android:id="@+id/txt_phone_1"
+                android:hint="@string/phone_number_1"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            app:errorEnabled="true"
+            android:layout_weight="1" >
+
+            <androidx.appcompat.widget.AppCompatEditText
+                style="@style/EditText"
+                android:id="@+id/txt_phone_2"
+                android:hint="@string/phone_number_2"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
+        app:errorEnabled="true" >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/EditText"
+            android:id="@+id/txt_driver_license"
+            android:hint="@string/driver_license"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

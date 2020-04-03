@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/FormTitle"
+        android:text="@string/address"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            app:errorEnabled="true">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spn_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:errorEnabled="true">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spn_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
+        app:errorEnabled="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/EditText"
+            android:id="@+id/txt_city"
+            android:hint="@string/city"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
+        app:errorEnabled="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/EditText"
+            android:id="@+id/txt_address"
+            android:hint="@string/address"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:minLines="2"
+            android:maxLines="3"
+            android:scrollbars="vertical"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
+        app:errorEnabled="true" >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/EditText"
+            android:id="@+id/txt_zip_code"
+            android:hint="@string/zip_code"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
