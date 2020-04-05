@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/xxlarge"
+    android:paddingEnd="@dimen/xxlarge" >
+
+    <include layout="@layout/dummy_focus_absorber" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/FormTitle"
+                android:text="@string/origin"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/SimpleText"
+                android:id="@+id/txt_origin_address" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SimpleText"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_origin_date"
+                    android:text="@string/placeholder_set_date"
+                    android:textColor="@color/orange"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/BtnLittle"
+                    android:id="@+id/btn_origin_date"
+                    android:text="@string/set"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_marginEnd="@dimen/medium" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SimpleText"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_origin_time"
+                    android:text="@string/placeholder_set_time"
+                    android:textColor="@color/orange" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/BtnLittle"
+                    android:id="@+id/btn_origin_time"
+                    android:text="@string/set"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_marginEnd="@dimen/medium" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:errorEnabled="true" >
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/EditText"
+                    android:id="@+id/txt_origin_extra_info"
+                    android:hint="@string/placeholder_extra_info"
+                    android:maxLines="3"
+                    android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/FormTitle"
+                android:text="@string/destin"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/SimpleText"
+                android:id="@+id/txt_destin_address" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SimpleText"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_destin_date"
+                    android:text="@string/placeholder_set_date"
+                    android:textColor="@color/orange" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/BtnLittle"
+                    android:id="@+id/btn_destin_date"
+                    android:text="@string/set"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_marginEnd="@dimen/medium" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SimpleText"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_destin_time"
+                    android:text="@string/placeholder_set_time"
+                    android:textColor="@color/orange" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/BtnLittle"
+                    android:id="@+id/btn_destin_time"
+                    android:text="@string/set"
+                    android:layout_marginBottom="@dimen/small"
+                    android:layout_marginEnd="@dimen/medium" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:errorEnabled="true" >
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    style="@style/EditText"
+                    android:id="@+id/txt_destin_extra_info"
+                    android:hint="@string/placeholder_extra_info"
+                    android:maxLines="3"
+                    android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/BtnSubmit"
+        android:id="@+id/btn_submit"
+        android:text="@string/submit"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

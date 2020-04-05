@@ -8,6 +8,24 @@
     <string name="app_name">truckie</string>
 
     <string name="placeholder_default">--</string>
+    <string name="placeholder_set_date">Please set a date</string>
+    <string name="placeholder_set_time">Please set a time</string>
+    <string name="placeholder_search_address">Enter Address, City or Zip code</string>
+    <string name="placeholder_extra_info">Instructions / Extra Info</string>
+    <string name="placeholder_extra_info_empty">No further instructions or extra info needed</string>
+    <string name="placeholder_place_bid">Place a bid</string>
+    <string name="placeholder_widget">There is no delivery to show</string>
+    <string name="label_pickup">pickup:</string>
+    <string name="label_delivery">delivery:</string>
+    <string name="popup_quit_text">Are you sure you want to quit?</string>
+    <string name="popup_quit_yes">Yes</string>
+    <string name="popup_quit_no">No</string>
+    <string name="new_delivery">Request new delivery</string>
+    <string name="new_delivery_title_origin">Pickup address</string>
+    <string name="new_delivery_title_destin">Delivery address</string>
+    <string name="new_delivery_title_details">Details</string>
+    <string name="delivery_auction_title">Delivery auction</string>
+    <string name="delivery_details_title">Delivery details</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -27,6 +45,11 @@
     <string name="vehicle_information">Vehicle Info</string>
     <string name="login_information">Login Info</string>
     <string name="next">next</string>
+    <string name="origin">Pickup</string>
+    <string name="destin">Delivery</string>
+    <string name="use_this">use this</string>
+    <string name="submit">submit</string>
+    <string name="set">set</string>
 
     <string-array name="spinner_default_placeholder_array">
         <item>@string/placeholder_default</item>

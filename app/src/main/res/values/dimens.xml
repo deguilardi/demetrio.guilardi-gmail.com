@@ -17,4 +17,7 @@
     <dimen name="text_xxlarge">36sp</dimen>
     <dimen name="text_xxxlarge">48sp</dimen>
 
+    <dimen name="elevation_under">2dp</dimen>
+    <dimen name="elevation_middle">4dp</dimen>
+    <dimen name="elevation_over">6dp</dimen>
 </resources>

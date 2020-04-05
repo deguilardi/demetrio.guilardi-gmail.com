@@ -30,6 +30,7 @@ import io.reactivex.schedulers.Schedulers;
 public class DB {
 
     private static final String USERS_TABLE = "users";
+    private static final String DELIVERIES_TABLE = "deliveries";
 
     private static DB instance;
     private DatabaseReference mDatabase;
@@ -58,4 +59,33 @@ public class DB {
         mDatabase.child(USERS_TABLE).child(user.getId()).setValue(user).addOnCompleteListener(listener);
     }
 
+    public void addDelivery(final DeliveryEntity delivery, final OnCompleteListener listener){
+        DatabaseReference ref = mDatabase.child(DELIVERIES_TABLE + "/_lastID");
+        ref.runTransaction(new Transaction.Handler() {
+
+            @NonNull
+            @Override
+            public Transaction.Result doTransaction(@NonNull MutableData mutableData) {
+                Long lastID = mutableData.getValue(Long.class);
+                if (lastID == null) {
+                    mutableData.setValue(1);
+                }
+                else {
+                    mutableData.setValue(lastID + 1);
+                }
+                return Transaction.success(mutableData);
+            }
+
+            @Override
+            public void onComplete(@Nullable DatabaseError databaseError, boolean b, @Nullable DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null) {
+                    Long id = dataSnapshot.getValue(Long.class);
+                    if(id != null) {
+                        delivery.setId(id);
+                        mDatabase.child(DELIVERIES_TABLE).child(String.valueOf(id)).setValue(delivery).addOnCompleteListener(listener);
+                    }
+                }
+            }
+        });
+    }
 }
