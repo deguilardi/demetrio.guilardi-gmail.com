@@ -50,6 +50,11 @@
     <string name="use_this">use this</string>
     <string name="submit">submit</string>
     <string name="set">set</string>
+    <string name="my_deliveries">My Deliveries</string>
+    <string name="auctions">Auctions</string>
+    <string name="no_auctions">There\'s no active auctions</string>
+    <string name="no_deliveries">You have no deliveries yet</string>
+    <string name="loading">loading...</string>
 
     <string-array name="spinner_default_placeholder_array">
         <item>@string/placeholder_default</item>

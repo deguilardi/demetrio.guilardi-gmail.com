@@ -59,6 +59,15 @@ public class DB {
         mDatabase.child(USERS_TABLE).child(user.getId()).setValue(user).addOnCompleteListener(listener);
     }
 
+    @SuppressLint("CheckResult")
+    public void getMyDeliveries(Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onSuccess){
+        Query query = mDatabase.child(USERS_TABLE + "/" + MyUser.getFBUid() + "/deliveries");
+        RxFirebaseDatabase.observeChildEvent(query)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(onSuccess);
+    }
+
     public void addDelivery(final DeliveryEntity delivery, final OnCompleteListener listener){
         DatabaseReference ref = mDatabase.child(DELIVERIES_TABLE + "/_lastID");
         ref.runTransaction(new Transaction.Handler() {
