@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 import ca.uqac.truckie.R;
 import ca.uqac.truckie.component.DeliveryAdapter;
 import ca.uqac.truckie.model.DB;
@@ -38,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         setupLists();
-
-        DB.getInstance().getMyDeliveries(item -> manageAdapterItem(item, mMyDeliveriesAdapter, mLstMyDeliveries, mTxtMsgMyDeliveries, R.string.no_deliveries));
+        retrieveData();
     }
 
     private void setupLists(){
@@ -56,15 +60,35 @@ public class MainActivity extends AppCompatActivity {
         mLstMyDeliveries.setAdapter(mMyDeliveriesAdapter);
     }
 
-    private void manageAdapterItem(RxFirebaseChildEvent<DataSnapshot> item, DeliveryAdapter adapter, RecyclerView list, TextView loadingElement, int zeroCountRes){
+    private void retrieveData(){
+
+        // retrieve deliveries
+        ValueEventListener deliveriesListener = new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if( dataSnapshot.getValue() == null ){
+                    mTxtMsgMyDeliveries.setText(R.string.no_deliveries);
+                }
+                else{
+                    mLstMyDeliveries.setVisibility(View.VISIBLE);
+                    mTxtMsgMyDeliveries.setVisibility(View.INVISIBLE);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // @TODO handle this error
+            }
+        };
+        DB.getInstance().getMyDeliveries(
+                deliveriesListener,
+                item -> manageAdapterItem(item, mMyDeliveriesAdapter));
+
+        // retrieve auctions
+        // ...
+    }
+
+    private void manageAdapterItem(RxFirebaseChildEvent<DataSnapshot> item, DeliveryAdapter adapter){
         adapter.manageChildItem(item);
-        if(adapter.getItemCount() > 0){
-            list.setVisibility(View.VISIBLE);
-            loadingElement.setVisibility(View.INVISIBLE);
-        }
-        else{
-            loadingElement.setText(zeroCountRes);
-        }
     }
 
     @Override

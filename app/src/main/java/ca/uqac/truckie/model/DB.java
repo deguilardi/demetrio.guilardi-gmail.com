@@ -14,16 +14,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
-import ca.uqac.truckie.MyUser;
+import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.Objects;
+import ca.uqac.truckie.MyUser;
 
 import durdinapps.rxfirebase2.RxFirebaseAuth;
 import durdinapps.rxfirebase2.RxFirebaseChildEvent;
 import durdinapps.rxfirebase2.RxFirebaseDatabase;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -59,13 +58,14 @@ public class DB {
         mDatabase.child(USERS_TABLE).child(user.getId()).setValue(user).addOnCompleteListener(listener);
     }
 
-    @SuppressLint("CheckResult")
-    public void getMyDeliveries(Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onSuccess){
+    public void getMyDeliveries(ValueEventListener onFinished, Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onRealtime){
         Query query = mDatabase.child(USERS_TABLE + "/" + MyUser.getFBUid() + "/deliveries");
+        query.addValueEventListener(onFinished);
         RxFirebaseDatabase.observeChildEvent(query)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(onSuccess);
+                .subscribe(onRealtime)
+                .dispose();
     }
 
     public void addDelivery(final DeliveryEntity delivery, final OnCompleteListener listener){
