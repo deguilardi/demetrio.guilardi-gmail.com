@@ -68,8 +68,7 @@ public class DB {
         RxFirebaseDatabase.observeChildEvent(query)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(onRealtime)
-                .dispose();
+                .subscribe(onRealtime);
     }
 
     @SuppressLint("CheckResult")
@@ -82,8 +81,7 @@ public class DB {
         RxFirebaseDatabase.observeChildEvent(query)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(onRealtime)
-                .dispose();
+                .subscribe(onRealtime);
     }
 
     public void addDelivery(final DeliveryEntity delivery, final OnCompleteListener listener){

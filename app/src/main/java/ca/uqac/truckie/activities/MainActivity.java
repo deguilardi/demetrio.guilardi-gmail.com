@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,7 +24,6 @@ import ca.uqac.truckie.model.DB;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ca.uqac.truckie.model.DeliveryEntity;
-import durdinapps.rxfirebase2.RxFirebaseChildEvent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,11 +95,9 @@ public class MainActivity extends AppCompatActivity {
         };
         DB.getInstance().getMyDeliveries(
                 deliveriesListener,
-                item -> manageAdapterItem(item, mMyDeliveriesAdapter));
+                item -> mMyDeliveriesAdapter.manageChildItem(item));
 
         // retrieve auctions
-
-        // retrieve deliveries
         ValueEventListener auctionsListener = new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -120,11 +116,7 @@ public class MainActivity extends AppCompatActivity {
         };
         DB.getInstance().getAuctions(
                 auctionsListener,
-                item -> manageAdapterItem(item, mAuctionsAdapter));
-    }
-
-    private void manageAdapterItem(RxFirebaseChildEvent<DataSnapshot> item, DeliveryAdapter adapter){
-        adapter.manageChildItem(item);
+                item -> mAuctionsAdapter.manageChildItem(item));
     }
 
     @Override
