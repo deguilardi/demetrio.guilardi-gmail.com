@@ -24,6 +24,7 @@ import ca.uqac.truckie.model.DB;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ca.uqac.truckie.model.DeliveryEntity;
 import durdinapps.rxfirebase2.RxFirebaseChildEvent;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.txt_msg_auctions) TextView mTxtMsgAuctions;
 
     private DeliveryAdapter mMyDeliveriesAdapter;
+    private DeliveryAdapter mAuctionsAdapter;
     @BindView(R.id.toolbar) Toolbar mToolbar;
 
     @Override
@@ -47,17 +49,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupLists(){
+        final MainActivity self = this;
+
         mLstMyDeliveries.setLayoutManager(new LinearLayoutManager(this));
         mMyDeliveriesAdapter = new DeliveryAdapter(this, new DeliveryAdapter.DeliveryAdapterOnClickHandler() {
             @Override
             public void onClick(int position, DeliveryAdapter.DeliveryAdapterViewHolder adapterViewHolder) {
-//                DeliveryEntity delivery = mMyDeliveriesAdapter.getItem(position);
-//                Intent intent = new Intent(self, DeliveryDetailsActivity.class);
-//                intent.putExtra(DeliveryDetailsActivity.KEY_EXTRA_DELIVERY, delivery);
-//                startActivity(intent);
+                DeliveryEntity delivery = mMyDeliveriesAdapter.getItem(position);
+                Intent intent = new Intent(self, DeliveryDetailsActivity.class);
+                intent.putExtra(DeliveryDetailsActivity.KEY_EXTRA_DELIVERY, delivery);
+                startActivity(intent);
             }
         });
         mLstMyDeliveries.setAdapter(mMyDeliveriesAdapter);
+
+        mLstAuctions.setLayoutManager(new LinearLayoutManager(this));
+        mAuctionsAdapter = new DeliveryAdapter(this, new DeliveryAdapter.DeliveryAdapterOnClickHandler() {
+            @Override
+            public void onClick(int position, DeliveryAdapter.DeliveryAdapterViewHolder adapterViewHolder) {
+                DeliveryEntity delivery = mAuctionsAdapter.getItem(position);
+                Intent intent = new Intent(self, DeliveryAuctionActivity.class);
+                intent.putExtra(DeliveryDetailsActivity.KEY_EXTRA_DELIVERY, delivery);
+                startActivity(intent);
+            }
+        });
+        mLstAuctions.setAdapter(mAuctionsAdapter);
     }
 
     private void retrieveData(){
@@ -84,7 +100,27 @@ public class MainActivity extends AppCompatActivity {
                 item -> manageAdapterItem(item, mMyDeliveriesAdapter));
 
         // retrieve auctions
-        // ...
+
+        // retrieve deliveries
+        ValueEventListener auctionsListener = new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if( dataSnapshot.getValue() == null ){
+                    mTxtMsgAuctions.setText(R.string.no_auctions);
+                }
+                else{
+                    mLstAuctions.setVisibility(View.VISIBLE);
+                    mTxtMsgAuctions.setVisibility(View.INVISIBLE);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // @TODO handle this error
+            }
+        };
+        DB.getInstance().getAuctions(
+                auctionsListener,
+                item -> manageAdapterItem(item, mAuctionsAdapter));
     }
 
     private void manageAdapterItem(RxFirebaseChildEvent<DataSnapshot> item, DeliveryAdapter adapter){

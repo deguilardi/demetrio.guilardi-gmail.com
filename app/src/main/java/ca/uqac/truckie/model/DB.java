@@ -16,6 +16,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Objects;
 
 import ca.uqac.truckie.MyUser;
@@ -62,6 +64,20 @@ public class DB {
 
     public void getMyDeliveries(ValueEventListener onFinished, Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onRealtime){
         Query query = mDatabase.child(USERS_TABLE + "/" + MyUser.getFBUid() + "/deliveries");
+        query.addValueEventListener(onFinished);
+        RxFirebaseDatabase.observeChildEvent(query)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(onRealtime)
+                .dispose();
+    }
+
+    @SuppressLint("CheckResult")
+    public void getAuctions(ValueEventListener onFinished, Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onRealtime){
+        long currentTimestamp = Calendar.getInstance(Locale.ENGLISH).getTime().getTime() / 1000;
+        Query query = mDatabase.child(DELIVERIES_TABLE)
+                .orderByChild("origin/timestamp")
+                .startAt(currentTimestamp);
         query.addValueEventListener(onFinished);
         RxFirebaseDatabase.observeChildEvent(query)
                 .subscribeOn(Schedulers.io())
