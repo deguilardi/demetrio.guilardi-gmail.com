@@ -251,4 +251,45 @@ public class UserEntity {
         }
     }
 
+    public static class Bid{
+        private long deliveryID;
+        private Long value;
+        Boolean winning;
+
+        public Bid(long deliveryID, Long value, boolean winning) {
+            this.deliveryID = deliveryID;
+            this.value = value;
+            this.winning = winning;
+        }
+
+        @SuppressWarnings("unused")
+        public long getDeliveryID() {
+            return deliveryID;
+        }
+
+        @SuppressWarnings("unused")
+        public void setDeliveryID(long deliveryID) {
+            this.deliveryID = deliveryID;
+        }
+
+        @SuppressWarnings("unused")
+        public Long getValue() {
+            return value;
+        }
+
+        @SuppressWarnings("unused")
+        public void setValue(Long value) {
+            this.value = value;
+        }
+
+        @SuppressWarnings("unused")
+        public Boolean isWinning() {
+            return winning;
+        }
+
+        @SuppressWarnings("unused")
+        public void setWinning(Boolean winning) {
+            this.winning = winning;
+        }
+    }
 }

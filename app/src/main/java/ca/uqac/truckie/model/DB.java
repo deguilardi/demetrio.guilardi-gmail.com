@@ -16,6 +16,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 import ca.uqac.truckie.MyUser;
 
 import durdinapps.rxfirebase2.RxFirebaseAuth;
@@ -96,5 +98,31 @@ public class DB {
                 }
             }
         });
+    }
+
+    public void saveBid(final DeliveryEntity delivery, final DeliveryEntity.Bid deliveryBid, final UserEntity.Bid userBid, final OnCompleteListener listener){
+        final String userID = MyUser.getFBUid();
+        final String deliveryID = String.valueOf(delivery.getId());
+        mDatabase.child(DELIVERIES_TABLE + "/" + deliveryID + "/bids/" + userID)
+                .setValue(deliveryBid)
+                .addOnCompleteListener(task -> mDatabase.child(USERS_TABLE + "/" + userID + "/bids/" + deliveryID)
+                        .setValue(userBid)
+                        .addOnCompleteListener(task1 -> mDatabase.child(DELIVERIES_TABLE + "/" + deliveryID + "/currentBid")
+                                .setValue(deliveryBid)
+                                .addOnCompleteListener(listener)));
+    }
+
+    public void acceptBid(final DeliveryEntity delivery, final OnCompleteListener listener){
+        delivery.setAuctionEnded(true);
+        saveDeliveryToUser(delivery, delivery.getUserID(), task -> saveDeliveryToUser(delivery, Objects.requireNonNull(delivery.getCurrentBid()).getUserID()
+                , task1 -> mDatabase.child(DELIVERIES_TABLE + "/" + delivery.getId())
+                        .removeValue()
+                        .addOnCompleteListener(listener)));
+    }
+
+    private void saveDeliveryToUser(DeliveryEntity delivery, String userID, OnCompleteListener listener){
+        mDatabase.child(USERS_TABLE + "/" + userID + "/deliveries/" + delivery.getId())
+                .setValue(delivery)
+                .addOnCompleteListener(listener);
     }
 }

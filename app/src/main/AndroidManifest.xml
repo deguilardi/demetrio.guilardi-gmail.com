@@ -52,6 +52,16 @@
             android:parentActivityName=".activities.MainActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <activity
+            android:name=".activities.DeliveryAuctionActivity"
+            android:label="@string/delivery_auction_title"
+            android:parentActivityName=".activities.MainActivity">
+        </activity>
+        <activity
+            android:name=".activities.DeliveryDetailsActivity"
+            android:label="@string/delivery_details_title"
+            android:parentActivityName=".activities.MainActivity">
+        </activity>
     </application>
 
 </manifest>

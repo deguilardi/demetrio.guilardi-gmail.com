@@ -51,9 +51,17 @@
     <string name="submit">submit</string>
     <string name="set">set</string>
     <string name="my_deliveries">My Deliveries</string>
+    <string name="my_delivery">My Delivery Request</string>
     <string name="auctions">Auctions</string>
     <string name="no_auctions">There\'s no active auctions</string>
     <string name="no_deliveries">You have no deliveries yet</string>
+    <string name="no_bids">There\'s no bids yet</string>
+    <string name="first_to_bid">Be the first to bid</string>
+    <string name="current_bid">Current Bid: $%1$s.00</string>
+    <string name="bid_too_low">Bid must be greater than $%1$d.00</string>
+    <string name="your_current_bid">Your\'s is the current Bid: $%1$s.00</string>
+    <string name="bid">bid</string>
+    <string name="accept">accept</string>
     <string name="loading">loading...</string>
 
     <string-array name="spinner_default_placeholder_array">
