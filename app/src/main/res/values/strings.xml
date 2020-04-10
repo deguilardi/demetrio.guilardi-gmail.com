@@ -63,6 +63,7 @@
     <string name="bid">bid</string>
     <string name="accept">accept</string>
     <string name="loading">loading...</string>
+    <string name="widget_title">My Deliveries</string>
 
     <string-array name="spinner_default_placeholder_array">
         <item>@string/placeholder_default</item>

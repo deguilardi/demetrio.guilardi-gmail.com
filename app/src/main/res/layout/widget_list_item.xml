@@ -1,0 +1,116 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/xxlarge"
+    android:orientation="horizontal"
+    android:padding="@dimen/medium"
+    android:weightSum="2"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:selectableItemBackground">
+
+    <TextView
+        android:id="@+id/txt_origin_date"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/text_xlarge"
+        android:paddingStart="@dimen/medium"
+        android:paddingEnd="@dimen/medium"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/darkGrey"
+        tools:text="10/10"/>
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <!-- ORIGIN -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_origin_label"
+                android:text="@string/label_pickup"
+                android:textSize="@dimen/text_xsmall"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"/>
+
+            <TextView
+                style="@style/autoscroll"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/txt_origin_info"
+                android:text="@string/placeholder_default"
+                android:textSize="@dimen/text_small"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_origin_time"
+                android:text="@string/placeholder_default"
+                android:textSize="@dimen/text_xxsmall"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"
+                android:textColor="@color/darkGrey"/>
+
+        </LinearLayout>
+
+        <!-- DESTIN -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_destin_label"
+                android:text="@string/label_delivery"
+                android:textSize="@dimen/text_xsmall"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"/>
+
+            <TextView
+                style="@style/autoscroll"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/txt_destin_info"
+                android:text="@string/placeholder_default"
+                android:textSize="@dimen/text_small"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_destin_time"
+                android:text="@string/placeholder_default"
+                android:textSize="@dimen/text_xxsmall"
+                android:paddingEnd="@dimen/medium"
+                android:paddingStart="0px"
+                android:textColor="@color/darkGrey"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

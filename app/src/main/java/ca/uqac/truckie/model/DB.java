@@ -72,6 +72,15 @@ public class DB {
     }
 
     @SuppressLint("CheckResult")
+    public void getMyDeliveriesAllAtOnce(Consumer<? super DataSnapshot> onSuccess){
+        Query query = mDatabase.child(USERS_TABLE + "/" + MyUser.getFBUid() + "/deliveries");
+        RxFirebaseDatabase.observeSingleValueEvent(query)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(onSuccess);
+    }
+
+    @SuppressLint("CheckResult")
     public void getAuctions(ValueEventListener onFinished, Consumer<? super RxFirebaseChildEvent<DataSnapshot>> onRealtime){
         long currentTimestamp = Calendar.getInstance(Locale.ENGLISH).getTime().getTime() / 1000;
         Query query = mDatabase.child(DELIVERIES_TABLE)
