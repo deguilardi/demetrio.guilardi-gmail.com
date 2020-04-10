@@ -10,6 +10,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.Splash">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
     <style name="AppTheme.NoActionBar.Contrast" parent="AppTheme.NoActionBar">
         <item name="colorAccent">@android:color/white</item>
         <item name="colorControlNormal">@color/lightGrey</item>
