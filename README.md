@@ -8,6 +8,9 @@ One app to connect people who needs to transport things to drivers who can trans
 
 ![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/blob/master/images/connect.png)
 
+### Goal
+An Android application with a fluid interface, using a firebase database and that can be run on tablets and
+phones.
 
 ### Prerequisites
 
