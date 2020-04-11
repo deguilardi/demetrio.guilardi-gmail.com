@@ -4,9 +4,7 @@
 
 This is an academic project, one app to connect people who needs to transport things to drivers who can transport these things, within this application the user can create an request of delivery and the drivers can consult the list delivery and make an offer for one that he can transport. 
 
-![Image of Bid](https://github.com/deguilardi/uqac-8INF865-truckie/images/bid.png)
-
-![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/images/connect.png)
+![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/blob/master/images/connect.png)
 
 
 ### Prerequisites
