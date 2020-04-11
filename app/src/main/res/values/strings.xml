@@ -64,6 +64,7 @@
     <string name="accept">accept</string>
     <string name="loading">loading...</string>
     <string name="widget_title">My Deliveries</string>
+    <string name="night_mode">Night Mode</string>
     <string name="logout">Logout</string>
 
     <string-array name="spinner_default_placeholder_array">

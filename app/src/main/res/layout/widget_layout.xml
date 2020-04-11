@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:dividerHeight="1dp"
         android:divider="#eeeeee"
-        tools:listitem="@layout/widget_list_item"/>
+        android:dividerHeight="1dp"
+        tools:listitem="@layout/widget_list_item" />
 </LinearLayout>
