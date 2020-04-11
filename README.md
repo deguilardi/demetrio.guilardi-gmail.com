@@ -1,31 +1,95 @@
 # truckie 
-
-This is an academic project developed for the discipline Programmation de plateformes mobiles conducted by Prof. Bob Menelas  at University of Quebec at Chicoutimi, Canada.
+This is an academic project developed for the discipline "Programmation de Plateformes Mobiles" conducted by Prof. Bob Menelas at University of Quebec at Chicoutimi, Canada.
   
 ### About the app
+Truckie is an app that connects people who needs to transport things with people who own vehicles eligible to transport these things.
+Within this app, one can request a delivery, by just setting up the origin, destination, dates and times.
+Drivers can consult the delivery list and make an offer for deliveries he can transport, other drivers can also make an offer.
+Finnaly, the user who requested the delivery will accept the best offer. 
 
-One app to connect people who needs to transport things to drivers who can transport these things, within this application the user can create an personalized account request a delivery, set the origin and destination and publish this delivery. The drivers can consult the list delivery and make an offer for one that he can transport, many other drivers can also make an offer then the user will accept the best offer. 
+### Setting up and running
+For academic purposes, this app was made in JAVA, not Kotlin.
+You will need Android Studio, a Firebase Real Time Database and a Google Maps API key.
 
-![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/blob/master/images/connect.png)
+#### Firebase
+You can use our Firebase Database =D. If you want to set up your own, just follow this [link](https://developer.android.com/studio/write/firebase.html) to generate your own database;
 
-### Goal
-An Android application with a fluid interface, using a firebase database and that can be run on tablets and
-phones.
+#### Google Maps
+* Get an [API key](https://developers.google.com/maps/documentation/javascript/get-api-key).
+* Create a api key entry in any `gradle.properties` file (we recommend ~/.gradle/gradle.properties file).
+`
+GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
+`
 
-### Prerequisites  
-What you need to execute
+#### Running
+After setting up, import the project on Android Studio, select a device or emulator and hit the play button.
 
-* Android Studio 
-* Firebase (database firebase account)
+## Team
+GUID09058608 Guilardi, Demetrio
+XXXXXXXXXXXX Barbosa, Raphael
 
-### How install and run this project
+## Screenshots
+<table>
+    <tr>
+        <td>![screenshot](/github_assets/screen_details.png)</td>
+        <td>![screenshot](/github_assets/screen_request.png)</td>
+    </tr>
+    <tr>
+        <td>![screenshot](/github_assets/screen_main.png)</td>
+        <td>![screenshot](/github_assets/screen_main_dark.png)</td>
+    </tr>
+</table>
 
-```
-1. Download this project as zip and extract it
-2. Import it in Android Studio
-3. Sync Gradle and run on your device/emulator
-```
+## Functionalities
 
-### Project status
+### User login
+* Fill up the login form with your email and password;
+* Then click on the Login button to access your account.
 
-In progress
+### Create account
+Click on the link underneath the Login button on the application login screen to create a new account.
+
+* Fill up the login form with your email and password;
+* The password field must be typed twice;
+* Hit the "next" button keep going.
+* On the second page, enter your personal information: Full name, phone numbers and drivers license. User hits the "next" button to go to the third page.
+* On the third page, enter your full address, with ZIP code. User hits the next button to go to the fourth and last page.
+* On the last page, register your vehicle with the make, model, year, type, size and cargo capacity.
+
+
+### Request delivery
+* To request a new delivery, you hit the "Request new Delivery" button on the mains activity.
+* You then select the pickup location, by searching an address on Google maps platform.
+* Select one of the results and goes to the next screen.
+* The second screen is where the you must inform the pickup date, time and any other further information, such as “the key is under the mat”.
+* The third screen is pretty similar to the first one of this case. You must select an address for the delivery.
+* The last screen is also a details information, but this time, you must fill in with the delivery details, such as “the gate’s pass code is #123”.
+
+### Track my deliveries
+* On the main activity, you can view a list of deliveries, select a delivery and view details.
+
+
+### View delivery auction
+* On the main activity, you can view a list of auctions with basic status
+* Select a delivery to see the details;
+* If you are the requester or the auction winner, more specific details must be shown, such as specific address and further delivery instructions.
+* If you aren't the auction winner or the requester, a radius of the address must be shown in the map. Instead of the exact address, just the neighborhood is displayed. And the delivery instructions are hidden.
+
+### Bid on a delivery request
+* To bid in a delivery auction, you must select one of the deliveries from the auction list;
+* then click on Bid button, enter a bid value and click on Bid button to confirm.
+
+
+### Accept bid
+* To accept a bid, you select one of your own delivery requests on the auction list;
+* Then hit the bid button and on the confirm button to accept.
+
+
+### Track my bids
+* A list of made by you is shown to you.
+* You can track your bids. The ones you lost and the ones he won.
+
+
+### Night Mode
+* You can switch the night mode on and off. By doing that, a dark theme must be applied or disabled.
+
