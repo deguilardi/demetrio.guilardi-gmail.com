@@ -36,6 +36,8 @@ After setting up, import the project on Android Studio, select a device or emula
 | ![screenshot 1](/github_assets/screen_details.png) | ![screenshot 2](/github_assets/screen_request.png)   |
 | | |
 | ![screenshot 3](/github_assets/screen_main.png)    | ![screenshot 4](/github_assets/screen_main_dark.png) |
+| | |
+| ![screenshot 5](/github_assets/screen_widget.png)    |
 
 ## Functionalities
 
