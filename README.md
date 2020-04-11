@@ -26,8 +26,8 @@ GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
 After setting up, import the project on Android Studio, select a device or emulator and hit the play button.
 
 ## Team
-GUID09058608 Guilardi, Demetrio
-XXXXXXXXXXXX Barbosa, Raphael
+* GUID09058608 Guilardi, Demetrio
+* FERR02088908 Barbosa, Raphael
 
 ## Screenshots
 | | |
