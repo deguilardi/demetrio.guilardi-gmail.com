@@ -90,3 +90,5 @@ Click on the link underneath the Login button on the application login screen to
 ### Night Mode
 * You can switch the night mode on and off. By doing that, a dark theme must be applied or disabled.
 
+### Truckie Widget
+* On the Home screen, you can add a widget with list of your deliveries on truckie.
