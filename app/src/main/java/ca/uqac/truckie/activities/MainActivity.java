@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -134,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent startSettingsActivity = new Intent(this, RequestDeliveryActivity.class);
                 startActivity(startSettingsActivity);
                 return true;
+            case R.id.menuLogout:
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

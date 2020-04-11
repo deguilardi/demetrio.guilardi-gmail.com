@@ -8,4 +8,9 @@
         android:orderInCategory="200"
         android:title="@string/new_delivery"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menuLogout"
+        android:orderInCategory="200"
+        android:title="Logout"
+        app:showAsAction="never" />
 </menu>
