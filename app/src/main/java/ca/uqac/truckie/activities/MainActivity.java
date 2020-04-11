@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent startSettingsActivity = new Intent(this, RequestDeliveryActivity.class);
                 startActivity(startSettingsActivity);
                 return true;
-            case R.id.menuLogout:
+            case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 startActivity(new Intent(this, LoginActivity.class));
