@@ -1,5 +1,6 @@
 # truckie 
 This is an academic project developed for the discipline "Programmation de Plateformes Mobiles" conducted by Prof. Bob Menelas at University of Quebec at Chicoutimi, Canada.
+[intro](/github_assets/intro.gif)
   
 ### About the app
 Truckie is an app that connects people who needs to transport things with people who own vehicles eligible to transport these things.
