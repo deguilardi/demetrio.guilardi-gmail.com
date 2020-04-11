@@ -29,16 +29,8 @@ GUID09058608 Guilardi, Demetrio
 XXXXXXXXXXXX Barbosa, Raphael
 
 ## Screenshots
-<table>
-    <tr>
-        <td>![screenshot](/github_assets/screen_details.png)</td>
-        <td>![screenshot](/github_assets/screen_request.png)</td>
-    </tr>
-    <tr>
-        <td>![screenshot](/github_assets/screen_main.png)</td>
-        <td>![screenshot](/github_assets/screen_main_dark.png)</td>
-    </tr>
-</table>
+|![screenshot 1](/github_assets/screen_details.png)|![screenshot 2](/github_assets/screen_request.png)|
+|![screenshot 3](/github_assets/screen_main.png)|![screenshot 4](/github_assets/screen_main_dark.png)|
 
 ## Functionalities
 
