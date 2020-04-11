@@ -1,13 +1,16 @@
 # truckie 
 
-### About 
+This is an academic project conducted by Prof. Bob Menelas for the discipline Programmation de plateformes mobiles at University of Quebec at Chicoutimi, Canada.
+  
+### About the app
 
-This is an academic project, one app to connect people who needs to transport things to drivers who can transport these things, within this application the user can create an request of delivery and the drivers can consult the list delivery and make an offer for one that he can transport. 
+One app to connect people who needs to transport things to drivers who can transport these things, within this application the user can create an request of delivery and the drivers can consult the list delivery and make an offer for one that he can transport. 
 
-![Image of Bid](https://github.com/deguilardi/uqac-8INF865-truckie/images/bid.png)
+![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/blob/master/images/connect.png)
 
-![Image of Connect](https://github.com/deguilardi/uqac-8INF865-truckie/images/connect.png)
-
+### Goal
+An Android application with a fluid interface, using a firebase database and that can be run on tablets and
+phones.
 
 ### Prerequisites
 
@@ -22,6 +25,6 @@ This is an academic project, one app to connect people who needs to transport th
 3. Sync Gradle and run on your device/emulator
 ```
 
-## Project status
+### Project status
 
 In progress
