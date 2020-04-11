@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.Task;
 
 import ca.uqac.truckie.MyUser;
 import ca.uqac.truckie.R;
+import ca.uqac.truckie.util.NightModeController;
 
 public class SplashActivity extends Activity {
 
@@ -17,6 +18,7 @@ public class SplashActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        NightModeController.init(getApplication());
         MyUser.init();
         if(MyUser.isLogged()) {
             Task<Void> task = MyUser.getFirebaseUser().reload();

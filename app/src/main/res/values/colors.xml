@@ -9,4 +9,6 @@
     <color name="grey">#cccccc</color>
     <color name="darkGrey">#999999</color>
     <color name="orange">#ff6600</color>
+
+    <color name="title">@color/colorPrimaryDark</color>
 </resources>
