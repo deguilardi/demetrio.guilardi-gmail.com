@@ -1,5 +1,6 @@
 # truckie 
 This is an academic project developed for the discipline "Programmation de Plateformes Mobiles" conducted by Prof. Bob Menelas at University of Quebec at Chicoutimi, Canada.
+<br />
 ![intro](/github_assets/intro.gif)
   
 ### About the app
