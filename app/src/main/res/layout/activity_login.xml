@@ -30,6 +30,23 @@
             android:textAlignment="center"
             android:paddingBottom="@dimen/xxlarge"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_dev"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_large"
+            android:textAlignment="center"
+            android:paddingBottom="@dimen/large"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_devp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_large"
+            android:textAlignment="center"
+            android:paddingBottom="@dimen/large"/>
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/TextInputLayout"
             android:id="@+id/lyt_email"

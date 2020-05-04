@@ -6,6 +6,8 @@
 
     <!-- UI -->
     <string name="app_name">truckie</string>
+    <string name="app_dev">Developed by</string>
+    <string name="app_devp">Raphael Barbosa and Demetrio Guilardi</string>
 
     <string name="placeholder_default">--</string>
     <string name="placeholder_set_date">Please set a date</string>
